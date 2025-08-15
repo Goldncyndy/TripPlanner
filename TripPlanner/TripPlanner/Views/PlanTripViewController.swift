@@ -21,6 +21,8 @@ class PlanTripViewController: UIViewController {
         tripPlanTableView.rowHeight = UITableView.automaticDimension
         tripPlanTableView.estimatedRowHeight = 150
         tripPlanTableView.isScrollEnabled = true
+        
+        
     }
     
     override func viewDidLayoutSubviews() {

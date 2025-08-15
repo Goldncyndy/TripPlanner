@@ -19,6 +19,8 @@ class CreateTripViewController: UIViewController {
     
     @IBOutlet weak var NextButton: UIButton!
     
+    private let viewModel = TripViewModel()
+    
     // Temporary storage for trip data
         struct TripData: Codable {
             var name: String
@@ -29,18 +31,23 @@ class CreateTripViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            // Set up description text view placeholder
-            tripDescriptionTextView.text = "Tell us more about the trip.."
-            tripDescriptionTextView.textColor = .lightGray
-            tripDescriptionTextView.delegate = self
-            
-            tripDescriptionTextView.layer.borderWidth = 0.5
-            tripDescriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
-            
-            // Actions
-            closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
-            NextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
+            setupViews()
+            viewModel.fetchTrips()
         }
+    
+    func setupViews() {
+        // Set up description text view placeholder
+        tripDescriptionTextView.text = "Tell us more about the trip.."
+        tripDescriptionTextView.textColor = .lightGray
+        tripDescriptionTextView.delegate = self
+        
+        tripDescriptionTextView.layer.borderWidth = 0.5
+        tripDescriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        // Actions
+        closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        NextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
+    }
         
         @objc private func closeTapped() {
             dismiss(animated: true)
@@ -61,14 +68,32 @@ class CreateTripViewController: UIViewController {
             
             let trip = TripData(name: name, style: style, description: description)
             
-            // Save to UserDefaults (for now)
-            if let encoded = try? JSONEncoder().encode(trip) {
-                UserDefaults.standard.set(encoded, forKey: "savedTrip")
+            // Retrieve City
+            var destinationCity: City?
+            if let cityData = UserDefaults.standard.data(forKey: "selectedCity") {
+                destinationCity = try? JSONDecoder().decode(City.self, from: cityData)
             }
             
-            print("Trip Saved: \(trip)")
+            // Retrieve Dates
+            guard let startDate = UserDefaults.standard.object(forKey: "startDate") as? Date,
+                  let endDate = UserDefaults.standard.object(forKey: "endDate") as? Date,
+                  let city = destinationCity else {
+                print("Error: Missing city or dates")
+                return
+            }
+            // Convert Date to String
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd" // or your API format
+                let startDateStr = dateFormatter.string(from: startDate)
+                let endDateStr = dateFormatter.string(from: endDate)
+                
+                // Convert City to String
+            let cityStr = city.city
             
-            // Move to next screen or dismiss
+            // call view model
+            viewModel.createTrip(destination: cityStr, startDate: startDateStr, endDate: endDateStr, travelName: name, description: description, travelStyle: style)
+            
+            // dismiss screen
             dismiss(animated: true)
         }
         
@@ -94,4 +119,12 @@ class CreateTripViewController: UIViewController {
                 textView.textColor = .lightGray
             }
         }
+            
+            private func setupBindings() {
+                viewModel.onTripsUpdated = { [weak self] in
+                    // Reload table view or update UI
+                    print("Trips updated: \(self?.viewModel.trips ?? [])")
+                }
+            }
+            
     }

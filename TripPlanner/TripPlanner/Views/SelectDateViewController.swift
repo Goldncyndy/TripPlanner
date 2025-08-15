@@ -145,6 +145,17 @@ class SelectDateViewController: UIViewController {
     @objc private func doneTapped() {
         print("Start Date: \(startDateField.text ?? "")")
         print("End Date: \(endDateField.text ?? "")")
+        
+        // Save as Date object
+        if let startDateText = startDateField.text,
+           let startDate = parseDate(startDateText),
+           let endDateText = endDateField.text,
+           let endDate = parseDate(endDateText) {
+
+            UserDefaults.standard.set(startDate, forKey: "startDate")
+            UserDefaults.standard.set(endDate, forKey: "endDate")
+        }
+
         navigationController?.popViewController(animated: true)
     }
     

@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+
+struct City: Codable {
+//    let id: String?     
+    let city: String
+    
+    // CodingKeys to match API's JSON keys (if needed)
+    enum CodingKeys: String, CodingKey {
+//        case id
+        case city
+    }
+}

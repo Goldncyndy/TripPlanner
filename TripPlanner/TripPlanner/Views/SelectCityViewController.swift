@@ -45,8 +45,15 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
     }()
     
     // MARK: - Data
-    private let cities = ["New York", "London", "Paris", "Tokyo", "Sydney"]
-    
+    let cities = [
+        "Lagos, Nigeria",
+        "New York, USA",
+        "London, UK",
+        "Paris, France",
+        "Tokyo, Japan",
+        "Sydney, Australia"
+    ]
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -96,6 +103,14 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: - Actions
     
     @objc private func closeButtonTapped() {
+        // Suppose user selected a city
+        let selectedCity = cityTextField.text
+        
+        // Save as City object encoded to Data
+        if let cityData = try? JSONEncoder().encode(selectedCity) {
+            UserDefaults.standard.set(cityData, forKey: "selectedCity")
+        }
+
         navigationController?.popViewController(animated: true)
     }
     
