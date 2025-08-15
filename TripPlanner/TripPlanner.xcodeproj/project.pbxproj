@@ -20,6 +20,9 @@
 		CE1F215D2E4E9BE500D80BA6 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F215C2E4E9BE500D80BA6 /* SelectCityViewController.swift */; };
 		CE1F215F2E4EA9AD00D80BA6 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F215E2E4EA9AD00D80BA6 /* SelectDateViewController.swift */; };
 		CE1F21612E4EAA0C00D80BA6 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21602E4EAA0C00D80BA6 /* CreateTripViewController.swift */; };
+		CE1F21632E4EAF3F00D80BA6 /* CreateTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */; };
+		CE1F21652E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */; };
+		CE1F21672E4FAF3700D80BA6 /* PlannedTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		CE1F215C2E4E9BE500D80BA6 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		CE1F215E2E4EA9AD00D80BA6 /* SelectDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 		CE1F21602E4EAA0C00D80BA6 /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
+		CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripCell.swift; sourceTree = "<group>"; };
+		CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedTripHeaderCell.swift; sourceTree = "<group>"; };
+		CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedTripCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,9 @@
 				CE1F215C2E4E9BE500D80BA6 /* SelectCityViewController.swift */,
 				CE1F215E2E4EA9AD00D80BA6 /* SelectDateViewController.swift */,
 				CE1F21602E4EAA0C00D80BA6 /* CreateTripViewController.swift */,
+				CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */,
+				CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */,
+				CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */,
 			);
 			path = TripPlanner;
 			sourceTree = "<group>";
@@ -272,9 +281,12 @@
 			files = (
 				CE1F215F2E4EA9AD00D80BA6 /* SelectDateViewController.swift in Sources */,
 				CE1F21612E4EAA0C00D80BA6 /* CreateTripViewController.swift in Sources */,
+				CE1F21632E4EAF3F00D80BA6 /* CreateTripCell.swift in Sources */,
 				CE1F212E2E4E5C0600D80BA6 /* PlanTripViewController.swift in Sources */,
 				CE1F215D2E4E9BE500D80BA6 /* SelectCityViewController.swift in Sources */,
 				CE1F212A2E4E5C0600D80BA6 /* AppDelegate.swift in Sources */,
+				CE1F21652E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift in Sources */,
+				CE1F21672E4FAF3700D80BA6 /* PlannedTripCell.swift in Sources */,
 				CE1F212C2E4E5C0600D80BA6 /* SceneDelegate.swift in Sources */,
 				CE1F21342E4E5C0600D80BA6 /* TripPlanner.xcdatamodeld in Sources */,
 			);
@@ -384,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -441,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
