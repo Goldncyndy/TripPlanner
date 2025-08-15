@@ -87,7 +87,8 @@ class SelectDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        // Hide the back button
+        self.navigationItem.hidesBackButton = true
         setupUI()
         setupActions()
     }

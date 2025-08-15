@@ -52,7 +52,8 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        // Hide the back button
+           self.navigationItem.hidesBackButton = true
         // Setup Delegates
         dropdownTableView.delegate = self
         dropdownTableView.dataSource = self

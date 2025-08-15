@@ -23,6 +23,8 @@
 		CE1F21632E4EAF3F00D80BA6 /* CreateTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */; };
 		CE1F21652E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */; };
 		CE1F21672E4FAF3700D80BA6 /* PlannedTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */; };
+		CE1F21722E4FD6D200D80BA6 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21712E4FD6D200D80BA6 /* CityModel.swift */; };
+		CE1F21742E4FD6E000D80BA6 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21732E4FD6E000D80BA6 /* TripModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripCell.swift; sourceTree = "<group>"; };
 		CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedTripHeaderCell.swift; sourceTree = "<group>"; };
 		CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedTripCell.swift; sourceTree = "<group>"; };
+		CE1F21712E4FD6D200D80BA6 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		CE1F21732E4FD6E000D80BA6 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,20 +117,17 @@
 		CE1F21282E4E5C0600D80BA6 /* TripPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				CE1F21292E4E5C0600D80BA6 /* AppDelegate.swift */,
-				CE1F212B2E4E5C0600D80BA6 /* SceneDelegate.swift */,
-				CE1F212D2E4E5C0600D80BA6 /* PlanTripViewController.swift */,
+				CE1F21702E4FD62E00D80BA6 /* App Delegates */,
+				CE1F216E2E4FD54000D80BA6 /* Models */,
+				CE1F216C2E4FD52A00D80BA6 /* Views */,
+				CE1F216B2E4FD51700D80BA6 /* ViewModels */,
+				CE1F216A2E4FD50800D80BA6 /* Services */,
+				CE1F21692E4FD4F700D80BA6 /* Utilities */,
+				CE1F21682E4FD4E700D80BA6 /* Resources */,
 				CE1F212F2E4E5C0600D80BA6 /* Main.storyboard */,
-				CE1F21352E4E5C0800D80BA6 /* Assets.xcassets */,
 				CE1F21372E4E5C0800D80BA6 /* LaunchScreen.storyboard */,
 				CE1F213A2E4E5C0800D80BA6 /* Info.plist */,
 				CE1F21322E4E5C0600D80BA6 /* TripPlanner.xcdatamodeld */,
-				CE1F215C2E4E9BE500D80BA6 /* SelectCityViewController.swift */,
-				CE1F215E2E4EA9AD00D80BA6 /* SelectDateViewController.swift */,
-				CE1F21602E4EAA0C00D80BA6 /* CreateTripViewController.swift */,
-				CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */,
-				CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */,
-				CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */,
 			);
 			path = TripPlanner;
 			sourceTree = "<group>";
@@ -146,6 +147,75 @@
 				CE1F214F2E4E5C0900D80BA6 /* TripPlannerUITestsLaunchTests.swift */,
 			);
 			path = TripPlannerUITests;
+			sourceTree = "<group>";
+		};
+		CE1F21682E4FD4E700D80BA6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F21352E4E5C0800D80BA6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE1F21692E4FD4F700D80BA6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CE1F216A2E4FD50800D80BA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE1F216B2E4FD51700D80BA6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE1F216C2E4FD52A00D80BA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F212D2E4E5C0600D80BA6 /* PlanTripViewController.swift */,
+				CE1F216F2E4FD5F000D80BA6 /* Cells */,
+				CE1F21602E4EAA0C00D80BA6 /* CreateTripViewController.swift */,
+				CE1F215E2E4EA9AD00D80BA6 /* SelectDateViewController.swift */,
+				CE1F215C2E4E9BE500D80BA6 /* SelectCityViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE1F216E2E4FD54000D80BA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F21712E4FD6D200D80BA6 /* CityModel.swift */,
+				CE1F21732E4FD6E000D80BA6 /* TripModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE1F216F2E4FD5F000D80BA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */,
+				CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */,
+				CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE1F21702E4FD62E00D80BA6 /* App Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F212B2E4E5C0600D80BA6 /* SceneDelegate.swift */,
+				CE1F21292E4E5C0600D80BA6 /* AppDelegate.swift */,
+			);
+			path = "App Delegates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +350,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1F215F2E4EA9AD00D80BA6 /* SelectDateViewController.swift in Sources */,
+				CE1F21722E4FD6D200D80BA6 /* CityModel.swift in Sources */,
+				CE1F21742E4FD6E000D80BA6 /* TripModel.swift in Sources */,
 				CE1F21612E4EAA0C00D80BA6 /* CreateTripViewController.swift in Sources */,
 				CE1F21632E4EAF3F00D80BA6 /* CreateTripCell.swift in Sources */,
 				CE1F212E2E4E5C0600D80BA6 /* PlanTripViewController.swift in Sources */,
