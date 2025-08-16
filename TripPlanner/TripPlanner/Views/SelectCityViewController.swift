@@ -45,14 +45,14 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
     }()
     
     // MARK: - Data
-    let cities = [
-        "Lagos, Nigeria",
-        "New York, USA",
-        "London, UK",
-        "Paris, France",
-        "Tokyo, Japan",
-        "Sydney, Australia"
-    ]
+        private let cities: [City] = [
+            City(city: "Lagos, Nigeria"),
+            City(city: "New York, USA"),
+            City(city: "London, UK"),
+            City(city: "Paris, France"),
+            City(city: "Tokyo, Japan"),
+            City(city: "Sydney, Australia")
+        ]
 
     // MARK: - Lifecycle
     
@@ -68,7 +68,10 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Register cell for dropdown table
         dropdownTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        setupViewConstraints()
+    }
+    
+    func setupViewConstraints() {
         // Add subviews
         view.addSubview(closeButton)
         view.addSubview(whereLabel)
@@ -103,19 +106,10 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: - Actions
     
     @objc private func closeButtonTapped() {
-        // Suppose user selected a city
-        let selectedCity = cityTextField.text
-        
-        // Save as City object encoded to Data
-        if let cityData = try? JSONEncoder().encode(selectedCity) {
-            UserDefaults.standard.set(cityData, forKey: "selectedCity")
-        }
-
         navigationController?.popViewController(animated: true)
     }
     
     // MARK: - UITextFieldDelegate
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         dropdownTableView.isHidden = false
     }
@@ -134,14 +128,23 @@ class SelectCityViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = cities[indexPath.row]
+        let city = cities[indexPath.row]
+        cell.textLabel?.text = "\(city.city)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cityTextField.text = cities[indexPath.row]
+        let city = cities[indexPath.row]
+        
+        cityTextField.text = "\(city.city)"
+        
         dropdownTableView.isHidden = true
         cityTextField.resignFirstResponder()
+        
+        // Save selected city to UserDefaults
+        if let encoded = try? JSONEncoder().encode(city) {
+          UserDefaults.standard.set(encoded, forKey: "selectedCity")
+       }
     }
 }
 

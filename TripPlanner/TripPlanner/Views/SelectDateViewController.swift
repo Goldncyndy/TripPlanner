@@ -154,9 +154,12 @@ class SelectDateViewController: UIViewController {
 
             UserDefaults.standard.set(startDate, forKey: "startDate")
             UserDefaults.standard.set(endDate, forKey: "endDate")
+        }// Save dates
+        
+        if !selectingStartDate {
+            // Only dismiss when end date is selected
+            navigationController?.popViewController(animated: true)
         }
-
-        navigationController?.popViewController(animated: true)
     }
     
         

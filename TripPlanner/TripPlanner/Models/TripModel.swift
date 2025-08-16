@@ -8,7 +8,7 @@
 import Foundation
 
 struct Trip: Codable {
-//    let id: String?    
+    let id: String?    
     let title: String
     let destinationCity: City
     let startDate: Date
@@ -17,7 +17,7 @@ struct Trip: Codable {
     let travelStyle: String?
     
     enum CodingKeys: String, CodingKey {
-//        case id
+        case id
         case title
         case destinationCity
         case startDate

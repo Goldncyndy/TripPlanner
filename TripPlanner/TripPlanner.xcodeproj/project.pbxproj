@@ -28,7 +28,6 @@
 		CE1F21762E4FDA5200D80BA6 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21752E4FDA5200D80BA6 /* APIEndpoints.swift */; };
 		CE1F21782E4FDA6300D80BA6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21772E4FDA6300D80BA6 /* NetworkError.swift */; };
 		CE1F217A2E4FDA7400D80BA6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21792E4FDA7400D80BA6 /* NetworkService.swift */; };
-		CE1F217C2E4FDA8700D80BA6 /* APIClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F217B2E4FDA8700D80BA6 /* APIClients.swift */; };
 		CE1F217E2E4FE4FE00D80BA6 /* CreateTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F217D2E4FE4FE00D80BA6 /* CreateTripViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		CE1F21752E4FDA5200D80BA6 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		CE1F21772E4FDA6300D80BA6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CE1F21792E4FDA7400D80BA6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		CE1F217B2E4FDA8700D80BA6 /* APIClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClients.swift; sourceTree = "<group>"; };
 		CE1F217D2E4FE4FE00D80BA6 /* CreateTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +178,6 @@
 				CE1F21752E4FDA5200D80BA6 /* APIEndpoints.swift */,
 				CE1F21772E4FDA6300D80BA6 /* NetworkError.swift */,
 				CE1F21792E4FDA7400D80BA6 /* NetworkService.swift */,
-				CE1F217B2E4FDA8700D80BA6 /* APIClients.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -372,7 +369,6 @@
 				CE1F217E2E4FE4FE00D80BA6 /* CreateTripViewModel.swift in Sources */,
 				CE1F21632E4EAF3F00D80BA6 /* CreateTripCell.swift in Sources */,
 				CE1F212E2E4E5C0600D80BA6 /* PlanTripViewController.swift in Sources */,
-				CE1F217C2E4FDA8700D80BA6 /* APIClients.swift in Sources */,
 				CE1F215D2E4E9BE500D80BA6 /* SelectCityViewController.swift in Sources */,
 				CE1F212A2E4E5C0600D80BA6 /* AppDelegate.swift in Sources */,
 				CE1F21762E4FDA5200D80BA6 /* APIEndpoints.swift in Sources */,

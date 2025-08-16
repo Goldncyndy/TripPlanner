@@ -11,13 +11,18 @@ import Foundation
 class NetworkService {
     
     static let shared = NetworkService()
-    private let baseURL = URL(string: "https://your-beeceptor-endpoint.free.beeceptor.com")!
+    private let baseURL = URL(string: "https://trip-crud-api.free.beeceptor.com")!
 
     private init() {}
     
     // MARK: - Create Trip
     func createTrip(_ trip: Trip, completion: @escaping (Result<Trip, Error>) -> Void) {
-        let url = baseURL.appendingPathComponent("items")
+
+    // Combine baseURL and endpoint from APIEndpoints
+        guard let url = URL(string: APIEndpoints.baseURL + APIEndpoints.createTrip) else {
+        completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+        return
+    }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -46,7 +51,11 @@ class NetworkService {
 
     // MARK: - View Trips
     func fetchTrips(completion: @escaping (Result<[Trip], Error>) -> Void) {
-        let url = baseURL.appendingPathComponent("items")
+        // Combine baseURL and endpoint from APIEndpoints
+            guard let url = URL(string: APIEndpoints.baseURL + APIEndpoints.getTrips) else {
+            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            return
+        }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         

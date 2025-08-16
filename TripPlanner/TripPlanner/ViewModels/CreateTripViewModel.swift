@@ -19,24 +19,23 @@ class TripViewModel {
         }
     }
     
-    var onTripsUpdated: (() -> Void)?       // Closure to notify ViewController
+    var onTripsUpdated: (() -> Void)?     // Closure to notify ViewController
     
-    // MARK: - Create Trip
     func createTrip(destination: String, startDate: String, endDate: String, travelName: String, description: String, travelStyle: String) {
         
-        // Convert destination String back to City
+        // Convert destination String to City
         let city = City(city: destination)
         
         // Convert date Strings back to Date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let start = dateFormatter.date(from: startDate),
               let end = dateFormatter.date(from: endDate) else {
             print("Error: invalid date format")
             return
         }
         
-        let newTrip = Trip(title: travelName, destinationCity: city, startDate: start, endDate: end, notes: description, travelStyle: travelStyle)
+        let newTrip = Trip(id: "123", title: travelName, destinationCity: city, startDate: start, endDate: end, notes: description, travelStyle: travelStyle)
         
         networkService.createTrip(newTrip) { [weak self] result in
             DispatchQueue.main.async {
@@ -50,23 +49,6 @@ class TripViewModel {
             }
         }
     }
-    
-//    func createTrip(destination: City, startDate: Date, endDate: Date, travelName: String, description: String, travelStyle: String) {
-//        let newTrip = Trip(title: travelName, destinationCity: destination, startDate: startDate, endDate: endDate, notes: description, travelStyle: travelStyle)
-//        
-//        networkService.createTrip(newTrip) { [weak self] result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let trip):
-//                    print("Trip created: \(trip)")
-//                    self?.trips.append(trip)
-//                case .failure(let error):
-//                    print("Error creating trip: \(error.localizedDescription)")
-//                }
-//            }
-//        }
-//    }
-
 
     
     // MARK: - Fetch Trips
