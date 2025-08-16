@@ -12,7 +12,10 @@ class PlanTripViewController: UIViewController {
     @IBOutlet weak var tripPlanTableView: UITableView!
     @IBOutlet weak var tripPlanTableViewHeight: NSLayoutConstraint!
     
-    /*IBOutlet weak var tripPlanTableViewHeight: NSLayoutConstraint!*/
+    private let viewModel = TripViewModel()
+    weak var parentView: UIView?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tripPlanTableView.delegate = self
@@ -22,15 +25,43 @@ class PlanTripViewController: UIViewController {
         tripPlanTableView.estimatedRowHeight = 150
         tripPlanTableView.isScrollEnabled = true
         
+        setupBindings()
+        fetchPlannedTrips()
+//        callCreateVC()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchPlannedTrips), name: NSNotification.Name("TripCreated"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tripPlanTableView.layoutIfNeeded()
     }
-}
+    
+    private func setupBindings() {
+        viewModel.onTripsUpdated = { [weak self] in
+            self?.tripPlanTableView.reloadData()
+        }
+        
+        viewModel.onMessage = { [weak self] message, isSuccess in
+            guard let self = self else { return }
+            Snackbar.show(message: message, isSuccess: isSuccess, in: self.view)
+        }
+    }
 
+        
+    @objc private func fetchPlannedTrips() {
+            viewModel.fetchTrips()
+        }
+    
+    func callCreateVC() {
+        let createVC = CreateTripViewController()
+        createVC.onTripCreated = { [weak self] in
+            self?.fetchPlannedTrips() // reload the table view
+        }
+        present(createVC, animated: true)
+    }
+
+}
 
 
 // MARK: - Table View Data Source
@@ -52,14 +83,23 @@ extension PlanTripViewController: UITableViewDataSource {
         case 1:
             return tableView.dequeueReusableCell(withIdentifier: "PlannedTripHeaderCell", for: indexPath)
         case 2:
-            return tableView.dequeueReusableCell(withIdentifier: "PlannedTripCell", for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlannedTripCell", for: indexPath) as? PlannedTripCell else {
+                            return UITableViewCell()
+            }
+            
+            // Pass trips dynamically
+            if !viewModel.trips.isEmpty {
+               cell.configure(with: viewModel.trips)
+            }
+            return cell
+            
         default:
             return UITableViewCell()
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 { // Your PlannedTripHeaderCell index
-            return 150 // Test height
+            return 150 // height
         }
         if indexPath.row == 2 { // third cell (0-based index)
                 return 350
@@ -106,7 +146,7 @@ extension PlanTripViewController: CreateTripCellDelegate {
     
     func didTapCreateTrip() {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "CreateTripVC") as? CreateTripViewController {
-            vc.modalPresentationStyle = .formSheet // or .pageSheet, .formSheet, etc.
+            vc.modalPresentationStyle = .formSheet
             present(vc, animated: true, completion: nil)
         }
     }

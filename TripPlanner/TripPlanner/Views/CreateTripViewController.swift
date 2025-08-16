@@ -16,7 +16,8 @@ class CreateTripViewController: UIViewController {
     @IBOutlet weak var NextButton: UIButton!
     
     private let viewModel = TripViewModel()
-    
+    weak var parentView: UIView?
+
     // Dropdown table
     private var dropdownTableView: UITableView!
     private let travelStyles = ["Single", "Couple", "Family", "Group"]
@@ -27,6 +28,9 @@ class CreateTripViewController: UIViewController {
         var style: String
         var description: String
     }
+    
+    // closure property
+    var onTripCreated: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,10 +124,19 @@ class CreateTripViewController: UIViewController {
         let startDateStr = dateFormatter.string(from: startDate)
         let endDateStr = dateFormatter.string(from: endDate)
         
+        // Bind Snackbar for success/failure
+        viewModel.onMessage = { [weak self] message, isSuccess in
+            guard let parentView = self?.parentView else { return }
+            Snackbar.show(message: message, isSuccess: isSuccess, in: parentView)
+        }
         // Call view model
         viewModel.createTrip(destination: city.city, startDate: startDateStr, endDate: endDateStr, travelName: name, description: description, travelStyle: style)
         
-        dismiss(animated: true)
+        // Call the closure to notify parent
+        onTripCreated?()
+        NotificationCenter.default.post(name: NSNotification.Name("TripCreated"), object: nil)
+     
+        self.dismiss(animated: true)
     }
     
     private func showAlert(message: String) {

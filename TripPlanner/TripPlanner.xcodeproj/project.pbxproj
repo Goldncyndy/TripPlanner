@@ -29,6 +29,8 @@
 		CE1F21782E4FDA6300D80BA6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21772E4FDA6300D80BA6 /* NetworkError.swift */; };
 		CE1F217A2E4FDA7400D80BA6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21792E4FDA7400D80BA6 /* NetworkService.swift */; };
 		CE1F217E2E4FE4FE00D80BA6 /* CreateTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F217D2E4FE4FE00D80BA6 /* CreateTripViewModel.swift */; };
+		CE1F21802E50825300D80BA6 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F217F2E50825300D80BA6 /* TripCollectionViewCell.swift */; };
+		CE1F21822E509A5400D80BA6 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F21812E509A5400D80BA6 /* Snackbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		CE1F21772E4FDA6300D80BA6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CE1F21792E4FDA7400D80BA6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1F217D2E4FE4FE00D80BA6 /* CreateTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewModel.swift; sourceTree = "<group>"; };
+		CE1F217F2E50825300D80BA6 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE1F21812E509A5400D80BA6 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 		CE1F21692E4FD4F700D80BA6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE1F21812E509A5400D80BA6 /* Snackbar.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				CE1F21642E4FAF2300D80BA6 /* PlannedTripHeaderCell.swift */,
 				CE1F21622E4EAF3F00D80BA6 /* CreateTripCell.swift */,
 				CE1F21662E4FAF3700D80BA6 /* PlannedTripCell.swift */,
+				CE1F217F2E50825300D80BA6 /* TripCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -361,12 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1F21822E509A5400D80BA6 /* Snackbar.swift in Sources */,
 				CE1F215F2E4EA9AD00D80BA6 /* SelectDateViewController.swift in Sources */,
 				CE1F21782E4FDA6300D80BA6 /* NetworkError.swift in Sources */,
 				CE1F21722E4FD6D200D80BA6 /* CityModel.swift in Sources */,
 				CE1F21742E4FD6E000D80BA6 /* TripModel.swift in Sources */,
 				CE1F21612E4EAA0C00D80BA6 /* CreateTripViewController.swift in Sources */,
 				CE1F217E2E4FE4FE00D80BA6 /* CreateTripViewModel.swift in Sources */,
+				CE1F21802E50825300D80BA6 /* TripCollectionViewCell.swift in Sources */,
 				CE1F21632E4EAF3F00D80BA6 /* CreateTripCell.swift in Sources */,
 				CE1F212E2E4E5C0600D80BA6 /* PlanTripViewController.swift in Sources */,
 				CE1F215D2E4E9BE500D80BA6 /* SelectCityViewController.swift in Sources */,

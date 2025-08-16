@@ -334,39 +334,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7C-XE-kCI">
-                                                    <rect key="frame" x="22.666666666666657" y="1.3333333333333428" width="346" height="347.33333333333326"/>
+                                                    <rect key="frame" x="22.666666666666657" y="-33" width="346" height="416"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tpg-TC-PzB">
-                                                            <rect key="frame" x="10" y="10" width="326" height="327.33333333333331"/>
+                                                            <rect key="frame" x="10" y="10" width="326" height="396"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3448" translatesAutoresizingMaskIntoConstraints="NO" id="87b-nD-AF1">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="87b-nD-AF1">
                                                                     <rect key="frame" x="0.0" y="0.0" width="326" height="200"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="200" id="J7j-vo-4BE"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="132" translatesAutoresizingMaskIntoConstraints="NO" id="6WE-wp-DXh">
-                                                                    <rect key="frame" x="0.0" y="219" width="326" height="39.333333333333314"/>
+                                                                    <rect key="frame" x="0.0" y="219" width="326" height="108"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wAX-Kd-gI9">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="155.33333333333334" height="39.333333333333336"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="144" height="108"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bahamas Family Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3R-lc-ltZ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="17"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3R-lc-ltZ">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5th April, 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXG-NE-s5V">
-                                                                                    <rect key="frame" x="0.0" y="24.999999999999996" width="85" height="14.333333333333332"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXG-NE-s5V">
+                                                                                    <rect key="frame" x="0.0" y="58" width="50" height="50"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qao-cG-CXr">
-                                                                            <rect key="frame" x="287.33333333333331" y="24.999999999999996" width="38.666666666666686" height="14.333333333333332"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qao-cG-CXr">
+                                                                            <rect key="frame" x="276" y="58" width="50" height="50"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -374,13 +374,14 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm8-db-zeq">
-                                                                    <rect key="frame" x="0.0" y="277.33333333333337" width="326" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="346" width="326" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="ngC-eP-Dbs"/>
                                                                     </constraints>
+                                                                    <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="filled" title="View">
-                                                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                                                    <buttonConfiguration key="configuration" style="filled">
+                                                                        <color key="baseBackgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                                                     </buttonConfiguration>
                                                                 </button>
                                                             </subviews>
@@ -408,6 +409,13 @@
                                                 <constraint firstItem="C7C-XE-kCI" firstAttribute="centerX" secondItem="Gwn-6g-KFx" secondAttribute="centerX" id="q5h-Dc-8Zn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="durationLabel" destination="qao-cG-CXr" id="BFP-6d-HmQ"/>
+                                            <outlet property="startDateLabel" destination="oXG-NE-s5V" id="x67-31-HXs"/>
+                                            <outlet property="tripImageView" destination="87b-nD-AF1" id="cLp-Je-E7q"/>
+                                            <outlet property="tripTitleLabel" destination="f3R-lc-ltZ" id="FOD-Gp-416"/>
+                                            <outlet property="viewButton" destination="Zm8-db-zeq" id="nk4-3I-h4f"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -592,7 +600,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rectangle 3448" width="326" height="230"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="tree.fill" catalog="system" width="128" height="118"/>
@@ -603,6 +610,9 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
