@@ -102,6 +102,8 @@ TripPlanner/
 * Dates are handled using `DateFormatter` to convert between `String` and `Date` objects.
 * The table views for cities and travel styles are dynamically populated.
 
+* “Currently, the mock API (Beeceptor) does not persist created trips. Newly created trips are stored locally in the ViewModel and shown in the collection view immediately. In a production backend, trips would persist and appear on subsequent fetches.”
+
 
 This README gives enough information to run, test, and understand the project and API usage.
 
